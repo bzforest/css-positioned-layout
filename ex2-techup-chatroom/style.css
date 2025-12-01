@@ -1,1 +1,115 @@
-/* Start coding here */
+:root {
+  font-family: 'Sarabun', sans-serif;
+  font-size: 18px;
+  --gray: #717171;
+  --gray-light: #e6e6e6;
+  --green: #00b31a;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #fff;
+  color: #1f1f1f;
+}
+
+.chatroom {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.chatroom__header {
+  background: var(--gray);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.chatroom__window {
+  flex: 1;
+  padding: 2rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+}
+
+.message.left {
+  justify-content: flex-start;
+}
+
+.message.right {
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
+.bubble {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 1.2rem;
+  border-radius: 999px;
+  background: var(--gray);
+  color: black;
+  width: 300px;
+  position: relative;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.bubble.emoji-only {
+  height: 32px;
+  padding: 0.1rem 1rem;
+  justify-content: flex-start;
+}
+
+.message.right .bubble {
+  background: var(--green);
+  display: flex;
+  justify-content: flex-start;
+}
+
+.message.right .bubble--reply {
+  background: var(--gray-light);
+  color: black;
+}
+
+.status-dot {
+  border-radius: 50%;
+  background: #bababa;
+  position: absolute;
+  top: 147px;
+  right: 47px;
+  border: 0px;
+  color: white;
+  transform: scale(1.15);
+}
+
+@media screen only and (min-width:1000px) {
+    .bubble {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.45rem 1.2rem;
+        border-radius: 999px;
+        background: var(--gray);
+        color: #fff;
+        width: 200px;
+        position: relative;
+        font-size: 1rem;
+        text-align: center;
+      }
+}
